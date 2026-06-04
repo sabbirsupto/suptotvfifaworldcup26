@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FIFA26BD Clone</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0b1220;
+color:white;
+display:flex;
+}
+
+/* Sidebar */
+.sidebar{
+width:220px;
+height:100vh;
+background:#111827;
+padding:20px;
+position:fixed;
+}
+
+.sidebar h2{
+color:#00e5ff;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+margin:15px 0;
+opacity:0.7;
+}
+
+.sidebar a:hover{
+opacity:1;
+color:#00e5ff;
+}
+
+/* Main */
+.main{
+margin-left:220px;
+width:100%;
+padding:20px;
+}
+
+h1{
+color:#00e5ff;
+}
+
+.card{
+background:#111827;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.item{
+background:#0f172a;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="sidebar">
+<h2>⚽ FIFA26BD</h2>
+<a href="#">Dashboard</a>
+<a href="#">Matches</a>
+<a href="#">Standings</a>
+<a href="#">Teams</a>
+</div>
+
+<div class="main">
+
+<h1>🏆 World Cup 2026 Dashboard</h1>
+
+<div class="card">
+<h3>🔴 Live Matches</h3>
+<div id="matches"></div>
+</div>
+
+<div class="card">
+<h3>📊 Standings</h3>
+<div id="standings"></div>
+</div>
+
+</div>
+
+<script>
+const matches = [
+"Argentina vs Brazil - LIVE 🔴",
+"France vs Spain - UPCOMING",
+"England vs Germany - FINISHED"
+];
+
+const standings = [
+"1. Argentina - 9 pts",
+"2. Brazil - 6 pts",
+"3. France - 4 pts",
+"4. Spain - 3 pts"
+];
+
+let mbox = document.getElementById("matches");
+matches.forEach(m=>{
+let div = document.createElement("div");
+div.className="item";
+div.innerHTML="⚽ "+m;
+mbox.appendChild(div);
+});
+
+let sbox = document.getElementById("standings");
+standings.forEach(s=>{
+let div = document.createElement("div");
+div.className="item";
+div.innerHTML="📊 "+s;
+sbox.appendChild(div);
+});
+</script>
+
+</body>
+</html>
